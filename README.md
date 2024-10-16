@@ -27,7 +27,7 @@ Data transformation is handled using dbt, which processes the raw data stored in
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Acknowledgements
 
