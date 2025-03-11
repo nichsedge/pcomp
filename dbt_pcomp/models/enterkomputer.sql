@@ -17,7 +17,7 @@ with
                 else kname
             end as category,
             json_extract_array(pprcz)[safe_offset(0)] as price,
-            date(date_trunc(inserted_at, week)) as inserted_at,
+            date(date_trunc(date(inserted_at), week)) as inserted_at,
             'enterkomputer' as source
         from {{ source("dezoomcamp", "enterkomputer_raw") }}
     )
