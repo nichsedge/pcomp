@@ -9,7 +9,7 @@ from fake_useragent import UserAgent
 import pandas_gbq
 
 from google.oauth2 import service_account
-``
+
 credentials_json = os.getenv("GCP_CREDENTIALS")
 try:
     credentials = service_account.Credentials.from_service_account_info(
