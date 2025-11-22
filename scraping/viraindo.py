@@ -9,6 +9,7 @@ from fake_useragent import UserAgent
 import pandas_gbq
 
 from google.oauth2 import service_account
+``
 credentials_json = os.getenv("GCP_CREDENTIALS")
 try:
     credentials = service_account.Credentials.from_service_account_info(
@@ -17,9 +18,10 @@ try:
     )
 except:
     credentials = service_account.Credentials.from_service_account_file(
-    credentials_json,
-    scopes=["https://www.googleapis.com/auth/cloud-platform"],
+        credentials_json,
+        scopes=["https://www.googleapis.com/auth/cloud-platform"],
     )
+
 
 def fetch_data(url):
     """
@@ -82,7 +84,7 @@ def main():
     dataframes = {}
     for link in links:
         category = link.removesuffix(".html")
-        url = f"https://viraindo.com/{link}" # net
+        url = f"https://viraindo.com/{link}"  # net
 
         try:
             df = fetch_data(url)
