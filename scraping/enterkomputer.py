@@ -10,7 +10,7 @@ import re
 
 from google.oauth2 import service_account
 
-credentials_json = os.getenv("TF_VAR_bq_creds_file")
+credentials_json = os.getenv("GCP_CREDENTIALS")
 try:
     credentials = service_account.Credentials.from_service_account_info(
         json.loads(credentials_json),
