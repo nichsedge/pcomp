@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 import base64
 import json
-import requests
+from curl_cffi import requests
 from fake_useragent import UserAgent
 import pandas_gbq
 import re
@@ -21,24 +21,6 @@ except:
         credentials_json,
         scopes=["https://www.googleapis.com/auth/cloud-platform"],
     )
-
-# session = requests.Session()
-# response = session.get('https://www.enterkomputer.com/category/17/processor')
-
-# # cookies
-# cookies = session.cookies.get_dict()
-# str_cookies = f"enter_session={cookies['enter_session']}; csrf_cookie_name={cookies['csrf_cookie_name']}"
-
-
-# # token
-# token_pattern = r'data-api-token="([^"]+)"'
-# token_match = re.search(token_pattern, response.text)
-# token = token_match.group(1)
-
-# # signature
-# signature_pattern = r'data-api-signature="([^"]+)"'
-# signature_match = re.search(signature_pattern, response.text)
-# signature = signature_match.group(1)
 
 str_cookies = "_ga=GA1.1.1720223009.1763789067; cf_clearance=3JwInv6PN9evQdb80Ez5yQ7ZrPmx0sFWGMsq9.hNB04-1763797195-1.2.1.1-ZdA0VakTBtLvnoLmArvETkQrHhuM9qwH2o_YsyeE56swR0F9tEJOu4hhMnHS48m5Awoyg8hz5U2.W_AjeEeZ.1RYuTsaDwEwnGeRvUCWKB4IIfKAFuSe16u.gXkWa34pov2Qb5vC0srE8DcQIrtE4pNlGp5Q3QGE.rF6tFYPTX25kwwAZp5gewGTbV1xyUTUs49_ztrf5cybt.WOYfc.bBCOFp9e4rwqPOM54w2_E5o; enter_session=2e675e5178bd4792abaa1993a652572b5cc8c7d2; csrf_cookie_name=17e503d3b31823786376d3af251bb5c0; _ga_34MD92JJJB=GS2.1.s1763797196$o2$g1$t1763797299$j48$l0$h0"
 token = "U2FsdGVkX1-E55sT1JEmUtTtgjHvzgK98PZU8pKsTjQf8t2cV6U0Rrrd5ijzmdtRiKOvKb944B267vLzsZdvag"
@@ -65,7 +47,6 @@ def fetch_product_list(cat_id, cat):
             "X-Requested-With": "XMLHttpRequest",
             "Origin": "https://www.enterkomputer.com",
             "Referer": f"https://www.enterkomputer.com/category/{cat_id}/{cat}",
-            # "Cookie": str_cookies,
             "Sec-Fetch-Dest": "empty",
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "same-origin",
