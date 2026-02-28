@@ -1,3 +1,16 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "pandas",
+#     "requests",
+#     "fake-useragent",
+#     "pandas-gbq",
+#     "google-auth",
+#     "lxml",
+#     "html5lib",
+# ]
+# ///
+
 import requests
 import os
 import base64
