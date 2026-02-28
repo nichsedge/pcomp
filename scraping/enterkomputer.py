@@ -1,3 +1,15 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "pandas",
+#     "curl-cffi",
+#     "fake-useragent",
+#     "pandas-gbq",
+#     "google-auth",
+#     "lxml",
+# ]
+# ///
+
 import os
 import pandas as pd
 from datetime import datetime
